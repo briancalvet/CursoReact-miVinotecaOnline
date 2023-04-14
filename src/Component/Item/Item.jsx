@@ -13,7 +13,7 @@ export const Item = ({item}) => {
             <p className="card-text">Marca:{item.bodega}</p>
             <p className="card-text">Precio:{item.precio}</p>
             <p className="card-text">Stock Disponible:{item.stock}</p>
-            <a href="#" className="btn btn-primary">Go somewhere</a>
+            <a href="#" className="btn btn-primary">Ver producto</a>
             </div>
         </div>
 

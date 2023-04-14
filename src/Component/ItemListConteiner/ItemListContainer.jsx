@@ -6,13 +6,13 @@ import { ItemList } from "../ItemList/ItemList"
 
 const BBD = [
     {
-        "id" : 1, 
-        "idCategoria" : 1, 
-        "nombre" : "Luigi Bosca Sangre Malbec", 
-        "bodega" : "Luigi Bosca", 
-        "precio" : 9000, 
-        "stock" : 10,
-        "img" : "img/"
+        id : 1, 
+        idCategoria : 1, 
+        nombre: "Luigi Bosca Sangre Malbec", 
+        bodega: "Luigi Bosca", 
+        precio : 9000, 
+        stock : 10,
+        img: ""
 
 
 
@@ -21,33 +21,33 @@ const BBD = [
     },
 
     {
-        "id" : 2, 
-        "idCategoria" : 1, 
-        "nombre" : "Biolento", 
-        "bodega" : "MAAL", 
-        "precio" : 8000, 
-        "stock" : 3,
-        "img" : "img/"
+        id: 2, 
+        idCategoria : 1, 
+        nombre : "Biolento", 
+        bodega: "MAAL", 
+        precio : 8000, 
+        stock : 3,
+        img : ""
     },
 
     {
-        "id" : 3, 
-        "idCategoria" : 2, 
-        "nombre" : "Espumante ALYDA", 
-        "bodega" : "Salentein", 
-        "precio" : 9000, 
-        "stock" : 20,
-        "img" : "img/"
+        id : 3, 
+        idCategoria : 2, 
+        nombre : "Espumante ALYDA", 
+        bodega : "Salentein", 
+        precio : 9000, 
+        stock : 20,
+        img : ""
     },
 
     {
-        "id" : 4, 
-        "idCategoria" : 2, 
-        "nombre" : "Espumante Chandon Extra Brut", 
-        "bodega" : "Chandon", 
-        "precio" : 3500, 
-        "stock" : 50,
-        "img" : "img/"
+        id : 4, 
+        idCategoria : 2, 
+        nombre : "Espumante Chandon Extra Brut", 
+        bodega : "Chandon", 
+        precio : 3500, 
+        stock : 50,
+        
     },
 
 
@@ -58,7 +58,7 @@ const BBD = [
         "bodega" : "Nordes", 
         "precio" : 15000, 
         "stock" : 20,
-        "img" : "img/"
+        "img" : ""
     }
 
 
