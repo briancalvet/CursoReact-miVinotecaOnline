@@ -1,8 +1,11 @@
 
 // Recibir un objeto y devolverlo en forma de componente con esta plantilla. 
 
+// me permite navegar por mi aplicacion
+import { Link } from "react-router-dom"
+
 export const Item = ({item}) => {
-    console.log(item)
+    
 
     return (
 
@@ -13,7 +16,8 @@ export const Item = ({item}) => {
             <p className="card-text">Marca:{item.bodega}</p>
             <p className="card-text">Precio:{item.precio}</p>
             <p className="card-text">Stock Disponible:{item.stock}</p>
-            <a href="#" className="btn btn-primary">Ver producto</a>
+            {/* a Link le puedo agregar las mismas cualidades que a una etiqueta a */}
+            <a href="#" className="btn btn-primary"><Link className="nav-link" to={`/product/${item.id}`}>Ver Producto</Link></a> 
             </div>
         </div>
 

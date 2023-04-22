@@ -3,6 +3,7 @@
 
 import { useState , useEffect } from "react"
 import { ItemList } from "../ItemList/ItemList"
+import { useParams } from "react-router-dom"
 
 const BBD = [
     {
@@ -67,9 +68,13 @@ const BBD = [
 const ItemListCointainer = () => {
    
     const [productos, setProductos] = useState([])
+    const category = useParams()
 
     useEffect(() => {
 
+    if(category){
+        
+    }
      const  promesa = (condicional) => new Promise((resolve, reject) => {
 
             if(condicional){
