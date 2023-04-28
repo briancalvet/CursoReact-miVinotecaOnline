@@ -5,94 +5,34 @@ import { useState , useEffect } from "react"
 import { ItemList } from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
 
-const BBD = [
-    {
-        id : 1, 
-        idCategoria : 1, 
-        nombre: "Luigi Bosca Sangre Malbec", 
-        bodega: "Luigi Bosca", 
-        precio : 9000, 
-        stock : 10,
-        img: ""
 
-
-
-
-
-    },
-
-    {
-        id: 2, 
-        idCategoria : 1, 
-        nombre : "Biolento", 
-        bodega: "MAAL", 
-        precio : 8000, 
-        stock : 3,
-        img : ""
-    },
-
-    {
-        id : 3, 
-        idCategoria : 2, 
-        nombre : "Espumante ALYDA", 
-        bodega : "Salentein", 
-        precio : 9000, 
-        stock : 20,
-        img : ""
-    },
-
-    {
-        id : 4, 
-        idCategoria : 2, 
-        nombre : "Espumante Chandon Extra Brut", 
-        bodega : "Chandon", 
-        precio : 3500, 
-        stock : 50,
-        
-    },
-
-
-    {
-        "id" : 5, 
-        "idCategoria" : 3, 
-        "nombre" : "Gin Nordes", 
-        "bodega" : "Nordes", 
-        "precio" : 15000, 
-        "stock" : 20,
-        "img" : ""
-    }
-
-
-]
 
 const ItemListCointainer = () => {
    
     const [productos, setProductos] = useState([])
-    const category = useParams()
+    const {category} = useParams()
 
     useEffect(() => {
 
-    if(category){
+            if (category) { //Consulto si me ingresaron un parametro en la url
+              fetch('../json/productos.json')
+                .then(response => response.json())
+                .then(productos => {
+                  const productosFiltrados = productos.filter(prod => prod.stock > 0).filter(prod => prod.idCategoria === parseInt(category))
+                  setProductos(productosFiltrados)
         
-    }
-     const  promesa = (condicional) => new Promise((resolve, reject) => {
-
-            if(condicional){
-               resolve(BBD)
+                })
+            } else {
+              fetch('./json/productos.json')
+                .then(response => response.json())
+                .then(productos => {
+                  const productosFiltrados = productos.filter(prod => prod.stock > 0)
+                  setProductos(productosFiltrados)
+        
+                })
             }
-             reject("No posee los permisos necesarios")
-
-        })
-
-        promesa(true)
-        .then(productos => {
-            const productosFiltrados = productos.filter(prod => prod.stock > 0 )
-            const items = <ItemList productos={productos}/> // envio los productos consultados
-            setProductos(productosFiltrados) // visualizo los productos en mi pagina
-        })
-        .catch(error => console.log(error))
-
-    } , [])
+        
+          }, [category])
    
     return (
         /* Row para que todos mis productos aparezcan uno al lado de otro */ 

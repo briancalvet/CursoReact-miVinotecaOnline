@@ -17,10 +17,10 @@ export const Item = ({item}) => {
             <p className="card-text">Precio:{item.precio}</p>
             <p className="card-text">Stock Disponible:{item.stock}</p>
             {/* a Link le puedo agregar las mismas cualidades que a una etiqueta a */}
-            <a href="#" className="btn btn-primary"><Link className="nav-link" to={`/product/${item.id}`}>Ver Producto</Link></a> 
+            <Link className="nav-link btn btn-primary "  to={`/product/${item.id}`}>Ver Producto</Link>
             </div>
         </div>
-
+   
 
     )
 }

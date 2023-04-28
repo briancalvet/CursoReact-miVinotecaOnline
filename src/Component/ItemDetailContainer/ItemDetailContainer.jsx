@@ -21,7 +21,7 @@ export const ItemDetailContainer = () => {
             const prod = productos.find(prod => prod.id === parseInt(id))
             setItem(prod)
         })
-    }, [])
+    }, [id])
     return (
         <div>
             <div className="card mb-3 container itemDetail">

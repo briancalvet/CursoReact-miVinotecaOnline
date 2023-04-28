@@ -1,5 +1,5 @@
 import {Categorias} from "../Categorias/categorias"; 
-import {CartWidget} from "../CartWidget/CartWidget"; 
+ 
 
 
 const Navbar = () => {

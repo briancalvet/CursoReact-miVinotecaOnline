@@ -10,12 +10,9 @@
 .BarraNav{
   position: relative;
   list-style: none;
-  margin-left: 12px;
   display: flex;
   align-items: center;
-  height: 60px;
-  padding: 0 24px;
-  bottom: 140px;
+  bottom: 100px;
   left: 250px;
  
 
@@ -23,9 +20,6 @@
 
 li {
   line-height: none; 
-}
-
-a { 
   border-style: none;
   color: brown;
   outline: none;
