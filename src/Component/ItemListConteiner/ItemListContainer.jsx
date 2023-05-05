@@ -4,13 +4,14 @@
 import { useState , useEffect } from "react"
 import { ItemList } from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
-
+import { useDarkModeContext } from "../../context/DarkModeContext"
 
 
 const ItemListCointainer = () => {
    
     const [productos, setProductos] = useState([])
     const {category} = useParams()
+    const {darkMode} = useDarkModeContext() // la idea es que yo consulte por ese darkModer y lo aplique en diferentes partes de mi codigo
 
     useEffect(() => {
 
@@ -39,7 +40,7 @@ const ItemListCointainer = () => {
         <div className="row"> 
            
            {/* visualizar los productos ya que es el contenedor donde van a estar agregados los productos. */}
-            {<ItemList productos={productos} />}
+            {<ItemList productos={productos} plantilla={"Item"} />}
         </div>
     )
 }

@@ -1,10 +1,23 @@
 import React from "react";
+import { useCarritoContext } from "../../context/CartContex";
+import { Link } from "react-router-dom";
 
-const CartWidget = (num) => {
+const CartWidget = () => {
+    const {getItemQuantity} = useCarritoContext()
     return (
         <div>
-            <img className="carritoCompras" src="icon/icon_shopping_cart_notification.svg" alt="" />
-            <p>{num}</p>
+           
+            <button className="">
+                <Link to={"/cart"} className="nav-link">
+                <i className="carritoCompra">
+                    <img src="" alt="" />
+                </i>
+                {getItemQuantity() > 0 && <span className="cantCarrito">{getItemQuantity()}</span>}
+                
+                </Link>
+                
+            </button>
+           
         </div>
     )
 }

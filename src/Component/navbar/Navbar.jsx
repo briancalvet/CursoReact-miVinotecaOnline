@@ -1,5 +1,6 @@
 import {Categorias} from "../Categorias/categorias"; 
- 
+import { BotonDarkMode } from "./btnDarkMode/btnDarkMode";
+
 
 
 const Navbar = () => {
@@ -9,6 +10,7 @@ const Navbar = () => {
            <img className="Logo" src="img/Logo_Pagina.png" alt="" /> 
            <div className="Menu">
            <Categorias/>
+           <BotonDarkMode />
            </div>
            
         

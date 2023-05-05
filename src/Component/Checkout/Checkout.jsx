@@ -1,9 +1,9 @@
 
 import { useRef } from "react";
-
+import { useCarritoContext } from "../../context/CartContex";
 export const Checkout = () => {
     const datForm = useRef() // crear una referencia para consultar los valores actuales del formulario
-
+    const {carrito , totalPrice, emptyCart} = useCarritoContext()
     const  consultarForm = (e) => {
         // consultar los datos del formulario, con sus valores actuales. 
         e.preventDefault()
@@ -16,9 +16,20 @@ export const Checkout = () => {
     } 
 
     return(
-        <div className="container divForm"  >
-            <form onSubmit={consultarForm} ref={datForm}></form>
-                <div className="mb-3">
+
+        <>
+            {carrito.lenght === 0 ?
+            <>
+            
+                <h2>Para finalizar compra debo tener articulos en el carrito</h2>
+                <Link className="nav-link" to={"/"}> <button className="btn btn-primary">Continuar comprando</button></Link>
+            
+             </>
+            :
+            
+            <div className="container divForm"  >
+            <form onSubmit={consultarForm} ref={datForm}>
+            <div className="mb-3">
                     <label htmlFor="Nombre" className="form-label">Nombre y Apellido</label>
                     <input type="text" className="form-control" name="nombre" />
                 </div>
@@ -49,8 +60,19 @@ export const Checkout = () => {
                 </div>
 
                 <button type="submit" className="btn btn-primary"> Finalizar compra </button>
-        </div>
-    )
+
+
+            </form>
+                
+         </div>
         
-    
-}
+        
+
+        
+      
+            }
+
+        </> 
+
+       )
+    } 

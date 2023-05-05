@@ -1,7 +1,8 @@
 
 import { Link } from "react-router-dom"
+import {memo} from "react"
 
-export const Categorias = () => {
+export const Categorias =  memo( () => {
     return (
         
         <ul className="BarraNav">
@@ -23,4 +24,5 @@ export const Categorias = () => {
         </ul>
     
     )
-}
+
+})

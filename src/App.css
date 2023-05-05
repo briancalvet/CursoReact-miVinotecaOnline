@@ -45,3 +45,24 @@ li {
   max-width: 740px;
   margin-top: 10px;
 }
+
+
+.darkMode {
+
+  background-color: black;
+  color: gainsboro; 
+
+
+}
+
+.cardBody {
+  background-color: whitesmoke;
+  margin-bottom: 3px;
+  text-align: center;
+}
+
+.cardBodyDark{
+  background-color: hsl(0, 0%, 33%);
+  margin-bottom: 3px;
+  text-align: center;
+}

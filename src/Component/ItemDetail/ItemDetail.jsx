@@ -1,10 +1,11 @@
 // platilla de productos 
 import { ItemCount } from "../ItemCount/ItemCount"
+import { useCarritoContext } from "../../context/CartContex"
 export const ItemDetail = ({item}) => {
-
+    const {addItem} = useCarritoContext()
+    
     const onAdds = (contador) =>{ // agregar al carrito. 
-        console.log(contador)
-        console.log(item)
+        addItem(item , contador )
     }
 
     return (
